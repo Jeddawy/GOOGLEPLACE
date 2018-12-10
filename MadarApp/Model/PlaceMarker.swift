@@ -11,10 +11,8 @@ import GoogleMaps
 import GooglePlaces
 
 class PlaceMarker: GMSMarker {
-    // 1
     let place: GooglePlace
     
-    // 2
     init(place: GooglePlace) {
         self.place = place
         super.init()

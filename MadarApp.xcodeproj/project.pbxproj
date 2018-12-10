@@ -7,21 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E11998A52164200B00F0AD0C /* GooglePlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11998A42164200B00F0AD0C /* GooglePlaces.swift */; };
+		E1601BF121626266000C9F63 /* PlaceMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1601BF021626266000C9F63 /* PlaceMarker.swift */; };
+		E1601BF521629C7A000C9F63 /* GoogleDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1601BF421629C7A000C9F63 /* GoogleDataProvider.swift */; };
 		E1BCB61C21611EEB0050BFBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCB61B21611EEB0050BFBC /* AppDelegate.swift */; };
-		E1BCB61E21611EEB0050BFBC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCB61D21611EEB0050BFBC /* ViewController.swift */; };
+		E1BCB61E21611EEB0050BFBC /* MapViewCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCB61D21611EEB0050BFBC /* MapViewCV.swift */; };
 		E1BCB62121611EEB0050BFBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1BCB61F21611EEB0050BFBC /* Main.storyboard */; };
 		E1BCB62321611EEB0050BFBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1BCB62221611EEB0050BFBC /* Assets.xcassets */; };
 		E1BCB62621611EEB0050BFBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1BCB62421611EEB0050BFBC /* LaunchScreen.storyboard */; };
+		E1CA540521657CB500780489 /* MarkerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CA540221657CB400780489 /* MarkerInfoView.swift */; };
+		E1CA540621657CB500780489 /* MarkerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1CA540321657CB400780489 /* MarkerInfoView.xib */; };
+		E1CA540721657CB500780489 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CA540421657CB400780489 /* UIViewExtension.swift */; };
+		F6426212FD8E33E8AE296D0C /* Pods_MadarApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B29BB8A3AAAA0251678EDF2 /* Pods_MadarApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B29BB8A3AAAA0251678EDF2 /* Pods_MadarApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MadarApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AFB148C31B00512E84FD0DE /* Pods-MadarApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MadarApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MadarApp/Pods-MadarApp.debug.xcconfig"; sourceTree = "<group>"; };
+		D9F2191AA98645BAFCD7E7F5 /* Pods-MadarApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MadarApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MadarApp/Pods-MadarApp.release.xcconfig"; sourceTree = "<group>"; };
+		E11998A42164200B00F0AD0C /* GooglePlaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlaces.swift; sourceTree = "<group>"; };
+		E1601BF021626266000C9F63 /* PlaceMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceMarker.swift; sourceTree = "<group>"; };
+		E1601BF421629C7A000C9F63 /* GoogleDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleDataProvider.swift; sourceTree = "<group>"; };
 		E1BCB61821611EEB0050BFBC /* MadarApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MadarApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1BCB61B21611EEB0050BFBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E1BCB61D21611EEB0050BFBC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E1BCB61D21611EEB0050BFBC /* MapViewCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewCV.swift; sourceTree = "<group>"; };
 		E1BCB62021611EEB0050BFBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1BCB62221611EEB0050BFBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1BCB62521611EEB0050BFBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1BCB62721611EEB0050BFBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1CA540221657CB400780489 /* MarkerInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerInfoView.swift; sourceTree = "<group>"; };
+		E1CA540321657CB400780489 /* MarkerInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarkerInfoView.xib; sourceTree = "<group>"; };
+		E1CA540421657CB400780489 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +45,55 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6426212FD8E33E8AE296D0C /* Pods_MadarApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33844D68A7D81907F60ED719 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B29BB8A3AAAA0251678EDF2 /* Pods_MadarApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8ACAC15A68B0B09245BF13C8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2AFB148C31B00512E84FD0DE /* Pods-MadarApp.debug.xcconfig */,
+				D9F2191AA98645BAFCD7E7F5 /* Pods-MadarApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E1601BF221629C38000C9F63 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E1BCB61D21611EEB0050BFBC /* MapViewCV.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E1601BF321629C5A000C9F63 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E1601BF421629C7A000C9F63 /* GoogleDataProvider.swift */,
+				E11998A42164200B00F0AD0C /* GooglePlaces.swift */,
+				E1601BF021626266000C9F63 /* PlaceMarker.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E1BCB60F21611EEB0050BFBC = {
 			isa = PBXGroup;
 			children = (
 				E1BCB61A21611EEB0050BFBC /* MadarApp */,
 				E1BCB61921611EEB0050BFBC /* Products */,
+				8ACAC15A68B0B09245BF13C8 /* Pods */,
+				33844D68A7D81907F60ED719 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +109,25 @@
 			isa = PBXGroup;
 			children = (
 				E1BCB61B21611EEB0050BFBC /* AppDelegate.swift */,
-				E1BCB61D21611EEB0050BFBC /* ViewController.swift */,
+				E1CA540121657CB400780489 /* Views */,
+				E1601BF321629C5A000C9F63 /* Model */,
+				E1601BF221629C38000C9F63 /* Controllers */,
 				E1BCB61F21611EEB0050BFBC /* Main.storyboard */,
 				E1BCB62221611EEB0050BFBC /* Assets.xcassets */,
 				E1BCB62421611EEB0050BFBC /* LaunchScreen.storyboard */,
 				E1BCB62721611EEB0050BFBC /* Info.plist */,
 			);
 			path = MadarApp;
+			sourceTree = "<group>";
+		};
+		E1CA540121657CB400780489 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E1CA540221657CB400780489 /* MarkerInfoView.swift */,
+				E1CA540321657CB400780489 /* MarkerInfoView.xib */,
+				E1CA540421657CB400780489 /* UIViewExtension.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +137,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1BCB62A21611EEB0050BFBC /* Build configuration list for PBXNativeTarget "MadarApp" */;
 			buildPhases = (
+				C9ED692E8889A80742081F7C /* [CP] Check Pods Manifest.lock */,
 				E1BCB61421611EEB0050BFBC /* Sources */,
 				E1BCB61521611EEB0050BFBC /* Frameworks */,
 				E1BCB61621611EEB0050BFBC /* Resources */,
+				A235EF53ACFC89CEC6326E43 /* [CP] Copy Pods Resources */,
+				1E30BAC30B6F55C516BEEB12 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,6 +192,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1CA540621657CB500780489 /* MarkerInfoView.xib in Resources */,
 				E1BCB62621611EEB0050BFBC /* LaunchScreen.storyboard in Resources */,
 				E1BCB62321611EEB0050BFBC /* Assets.xcassets in Resources */,
 				E1BCB62121611EEB0050BFBC /* Main.storyboard in Resources */,
@@ -131,13 +201,79 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1E30BAC30B6F55C516BEEB12 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MadarApp/Pods-MadarApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MadarApp/Pods-MadarApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A235EF53ACFC89CEC6326E43 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MadarApp/Pods-MadarApp-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MadarApp/Pods-MadarApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9ED692E8889A80742081F7C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MadarApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E1BCB61421611EEB0050BFBC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1BCB61E21611EEB0050BFBC /* ViewController.swift in Sources */,
+				E1CA540521657CB500780489 /* MarkerInfoView.swift in Sources */,
+				E11998A52164200B00F0AD0C /* GooglePlaces.swift in Sources */,
+				E1601BF521629C7A000C9F63 /* GoogleDataProvider.swift in Sources */,
+				E1BCB61E21611EEB0050BFBC /* MapViewCV.swift in Sources */,
 				E1BCB61C21611EEB0050BFBC /* AppDelegate.swift in Sources */,
+				E1CA540721657CB500780489 /* UIViewExtension.swift in Sources */,
+				E1601BF121626266000C9F63 /* PlaceMarker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +408,7 @@
 		};
 		E1BCB62B21611EEB0050BFBC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AFB148C31B00512E84FD0DE /* Pods-MadarApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +424,7 @@
 		};
 		E1BCB62C21611EEB0050BFBC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9F2191AA98645BAFCD7E7F5 /* Pods-MadarApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

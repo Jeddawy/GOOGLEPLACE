@@ -2,23 +2,20 @@
 //  GoogleDataProvider.swift
 //  MadarApp
 //
-//  Created by Ibrahim El-geddawy on 10/1/18.
+//  Created by Ibrahim El-geddawy on 10/2/18.
 //  Copyright © 2018 Jiddawi. All rights reserved.
 //
 
-import Foundation
+
 import UIKit
 import Foundation
 import CoreLocation
-import GoogleMaps
-import GooglePlaces
 import SwiftyJSON
 
-typealias PlacesCompletion = ([GMSPlace]) -> Void
+typealias PlacesCompletion = ([GooglePlace]) -> Void
 typealias PhotoCompletion = (UIImage?) -> Void
 
 class GoogleDataProvider {
-
     private var photoCache: [String: UIImage] = [:]
     private var placesTask: URLSessionDataTask?
     private var session: URLSession {
@@ -27,7 +24,7 @@ class GoogleDataProvider {
     
     func fetchPlacesNearCoordinate(_ coordinate: CLLocationCoordinate2D, radius: Double, types: [String], completion: @escaping PlacesCompletion) -> Void {
         var urlString = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(coordinate.latitude),\(coordinate.longitude)&radius=\(radius)&rankby=prominence&sensor=true&key=\(googleApiKey)"
-        let typesString = types.count > 0 ? types.joined(separator: "|") : "Bank"
+        let typesString = types.count > 0 ? types.joined(separator: "|") : "finance"
         urlString += "&types=\(typesString)"
         urlString = urlString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? urlString
         
@@ -35,7 +32,7 @@ class GoogleDataProvider {
             completion([])
             return
         }
-        
+        print("111111")
         if let task = placesTask, task.taskIdentifier > 0 && task.state == .running {
             task.cancel()
         }
@@ -45,7 +42,7 @@ class GoogleDataProvider {
         }
         
         placesTask = session.dataTask(with: url) { data, response, error in
-            var placesArray: [GMSPlace] = []
+            var placesArray: [GooglePlace] = []
             defer {
                 DispatchQueue.main.async {
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
@@ -58,7 +55,7 @@ class GoogleDataProvider {
                     return
             }
             results.forEach {
-                let place = GMSPlace
+                let place = GooglePlace(dictionary: $0, acceptedTypes: types)
                 placesArray.append(place)
                 if let reference = place.photoReference {
                     self.fetchPhotoFromReference(reference) { image in

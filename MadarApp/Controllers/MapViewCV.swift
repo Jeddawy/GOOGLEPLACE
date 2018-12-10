@@ -12,49 +12,50 @@ import GooglePlaces
 
 class MapViewCV : UIViewController {
 
-    @IBOutlet weak var pinImageVerticalConstrain: NSLayoutConstraint!
     @IBOutlet weak var addressLabel_lbl: UILabel!
-    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var mapView: GMSMapView!
     private let locationManager = CLLocationManager()
-
-    private let dataProvider = GMSPlace()
-    private let searchRadius: Double = 1000
-    
+    var myPosition : CLLocationCoordinate2D?
+    var targetPosition : CLLocationCoordinate2D?
+    var searchedTypes : [String] = ["mosque", "bank"]
+    private let dataProvider = GoogleDataProvider()
+    private let searchRadius: Double = 25000
+    var marker : GMSMarker?
     override func viewDidLoad() {
         super.viewDidLoad()
         googleInit()
     }
+    // MARK:- Getting NearbyPlaces Function
+    private func fetchNearbyPlaces(coordinate: CLLocationCoordinate2D, types: [String]) {
+        mapView.clear()
+        dataProvider.fetchPlacesNearCoordinate(coordinate, radius:searchRadius, types: types) { places in
+            places.forEach {
+                print(places.count)
+                let marker = PlaceMarker(place: $0)
+                marker.map = self.mapView
+            }
+        }
+    }
+    // MARK:- ReverseGeocodCoordinate
 
     private func reverseGeocodeCoordinate(_ coordinate: CLLocationCoordinate2D) {
+                let geocoder = GMSGeocoder()
         
-        // 1
-        let geocoder = GMSGeocoder()
-        
-        // 2
-        self.addressLabel_lbl.unlock()
-
         geocoder.reverseGeocodeCoordinate(coordinate) { response, error in
             guard let address = response?.firstResult(), let lines = address.lines else {
                 return
             }
-            
-            // 3
             self.addressLabel_lbl.text = lines.joined(separator: "\n")
             
-            // 1
             let labelHeight = self.addressLabel_lbl.intrinsicContentSize.height
             self.mapView.padding = UIEdgeInsets(top: self.view.safeAreaInsets.top, left: 0,
                                                 bottom: labelHeight, right: 0)
-            // 4
-            
             UIView.animate(withDuration: 0.25) {
-                //2
-                self.pinImageVerticalConstrain.constant = ((labelHeight - self.view.safeAreaInsets.top) * 0.5)
                 self.view.layoutIfNeeded()
             }
         }
     }
+    // MARK:- Delegation
     func googleInit(){
         
         locationManager.delegate = self
@@ -63,45 +64,61 @@ class MapViewCV : UIViewController {
 
     }
 
+    @IBAction func nearbyBanksPlaces(_ sender: Any) {
+        print("ffffffffffffffffffffffff")
+        fetchNearbyPlaces(coordinate: mapView.camera.target, types: ["bank"])
 
+    }
+    @IBAction func nearbyMisjidPlaces(_ sender: Any) {
+        fetchNearbyPlaces(coordinate: mapView.camera.target, types: ["mosque"])
+
+    }
+    
 }
-// MARK: - CLLocationManagerDelegate
-//1
+
+
+// MARK:- CLLocationManagerDelegate
 extension MapViewCV: CLLocationManagerDelegate {
-    // 2
+    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        // 3
         guard status == .authorizedWhenInUse else {
             return
         }
-        // 4
         locationManager.startUpdatingLocation()
         
-        //5
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true
     }
     
-    // 6
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else {
             return
         }
-        
-        // 7
-        mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 6, bearing: 0, viewingAngle: 0)
-//        mapView.camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: 6)
-        // 8
+        self.myPosition = location.coordinate
+        mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 12, bearing: 0, viewingAngle: 0)
+        fetchNearbyPlaces(coordinate: location.coordinate, types: searchedTypes)
+
         locationManager.stopUpdatingLocation()
     }
 }
 // MARK: - GMSMapViewDelegate
 extension MapViewCV: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
-        reverseGeocodeCoordinate(position.target)
-    }
+        reverseGeocodeCoordinate(position.target)    }
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
         addressLabel_lbl.lock()
     }
+   
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        self.targetPosition = marker.position
+        if(UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
+            UIApplication.shared.open(URL(string:"comgooglemaps://?saddr=\(myPosition?.latitude),\(myPosition?.longitude)&daddr=\(targetPosition?.latitude),\(targetPosition?.longitude)")!, options: [:], completionHandler: nil)
+        }else{
+            UIApplication.shared.open(URL(string:"https://www.google.com/maps/dir/?saddr=\(myPosition?.latitude),\(myPosition?.longitude)&daddr=\(targetPosition?.latitude),\(targetPosition?.longitude)")!, options: [:], completionHandler: nil)
+        }
+        return false
+    }
     
 }
+

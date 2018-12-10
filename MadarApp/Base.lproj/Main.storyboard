@@ -1,24 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Map ViewCV-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewCV" id="BYZ-38-t0r" customClass="MapViewCV" customModule="MadarApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G1w-ca-V2F" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DCz-bR-ZoQ">
+                                <rect key="frame" x="250" y="25" width="120" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Masjid"/>
+                                <connections>
+                                    <action selector="nearbyMisjidPlaces:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dkQ-aT-NMt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwu-b3-UM3">
+                                <rect key="frame" x="5" y="25" width="120" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="VT6-3t-JBJ"/>
+                                    <constraint firstAttribute="width" constant="120" id="qZD-gE-J1W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Banks"/>
+                                <connections>
+                                    <action selector="nearbyBanksPlaces:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hxf-rB-gpo"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rze-ib-Dag">
+                                <rect key="frame" x="0.0" y="646.5" width="375" height="20.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DCz-bR-ZoQ" secondAttribute="trailing" constant="5" id="2Bm-nS-Srf"/>
+                            <constraint firstItem="rze-ib-Dag" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3a4-bz-Ljs"/>
+                            <constraint firstItem="G1w-ca-V2F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4kf-3J-ooQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rze-ib-Dag" secondAttribute="bottom" id="Cnt-yP-l08"/>
+                            <constraint firstItem="rze-ib-Dag" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Czd-oy-O7v"/>
+                            <constraint firstItem="qwu-b3-UM3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="KIE-iS-K8k"/>
+                            <constraint firstItem="qwu-b3-UM3" firstAttribute="width" secondItem="DCz-bR-ZoQ" secondAttribute="width" id="QCr-Mo-2Xd"/>
+                            <constraint firstItem="G1w-ca-V2F" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Wsw-eq-1gH"/>
+                            <constraint firstItem="DCz-bR-ZoQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="XDt-a1-e87"/>
+                            <constraint firstItem="qwu-b3-UM3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="gqy-Sw-WFD"/>
+                            <constraint firstItem="G1w-ca-V2F" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="niT-Td-qcK"/>
+                            <constraint firstItem="qwu-b3-UM3" firstAttribute="height" secondItem="DCz-bR-ZoQ" secondAttribute="height" id="pgW-8B-Qvn"/>
+                            <constraint firstItem="G1w-ca-V2F" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="tMT-F7-a8Q"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="addressLabel_lbl" destination="rze-ib-Dag" id="Caa-MF-MtF"/>
+                        <outlet property="mapView" destination="G1w-ca-V2F" id="cKP-6J-a6r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="218" y="-7"/>
         </scene>
     </scenes>
 </document>
